@@ -110,6 +110,13 @@ header i {
 	margin-bottom: 1rem;
 }
 
+/* Game Cards */
+#game-cards {
+	display: grid;
+	gap: 1rem;
+	justify-content: center;
+}
+
 /* Footer Icon */
 footer i {
 	color: #333;
@@ -146,15 +153,14 @@ footer i:hover {
 }
 
 .flip-card.correct .flip-card-inner {
-  transform: rotateY(180deg) !important;
+	transform: rotateY(180deg) !important;
 }
 
 .flip-card.correct .flip-card-front,
 .flip-card.correct .flip-card-back {
-  background-color: rgba(40, 167, 69, 0.15) !important;
-  border-color: #28a745 !important;
+	background-color: rgba(40, 167, 69, 0.15) !important;
+	border-color: #28a745 !important;
 }
-
 
 /* On Going Guess */
 .guess .flip-card-front,
@@ -189,14 +195,14 @@ footer i:hover {
 }
 
 .flip-card.wrong {
-  animation: shake 0.5s ease-in-out;
+	animation: shake 0.5s ease-in-out;
 }
 
 .flip-card.wrong .flip-card-inner {
-  transform: rotateY(180deg) !important;
+	transform: rotateY(180deg) !important;
 }
 
 .flip-card.wrong .flip-card-back {
-  background-color: rgba(220, 53, 69, 0.15);
-  border-color: red;  
+	background-color: rgba(220, 53, 69, 0.15);
+	border-color: red;
 }

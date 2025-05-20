@@ -42,12 +42,14 @@ function tutorial() {
 				$("#tutorialCard3, #tutorialCard4").addClass("correct");
 			}, 500);
 			// Update title
-			$("h5#tutorialTitle").text('Easy right? Press "Lets Go!" to start!');
-            // Change button to play
+			$("h5#tutorialTitle").text(
+				'Easy right? Press "Lets Go!" to start!'
+			);
+			// Change button to play
 			$(".btn.btn-secondary")
 				.removeClass("btn-secondary")
 				.addClass("btn-success")
-                .text("Let's go!");
+				.text("Let's go!");
 		} else {
 			console.log("Wait for two cards to flip");
 		}

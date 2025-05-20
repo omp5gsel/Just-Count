@@ -37,10 +37,23 @@ function shuffleCards(level) {
 	// Mix the numbers/pairs up using Math.random
 	values.sort(() => Math.random() - 0.5);
 
-	// Add cards into the game view
+	// Set and empty the game area
 	const gameArea = $("#game-cards");
 	gameArea.empty();
 
+	// Set rows required for the game area, based on level
+	const rows = level < 5 ? 2 : level < 10 ? 3 : 4;
+	// Calculate how many columns we need
+	const cols = Math.ceil(values.length / rows);
+	// Apply the dynamic CSS grid columns
+	gameArea.css({
+		// Fixed-width columns
+		"grid-template-columns": `repeat(${cols}, 80px)`,
+		// Center the whole grid in its container
+		"justify-content": "center",
+	});
+
+	// Create a card for each value
 	values.forEach((val, idReq) => {
 		// ` required for multi-line strings and strings with variables
 		const cardId = `gameCard${idReq + 1}`;
@@ -61,6 +74,7 @@ function shuffleCards(level) {
 			cardClicked(this);
 		});
 
+		// Add the card to the game area
 		gameArea.append(card);
 		console.log(`Card ${cardId} added with value ${val}`);
 	});
