@@ -58,7 +58,7 @@ function shuffleCards(level) {
 
 		// Make the cards clickable
 		card.on("click", function () {
-			gameCardClicked(this);
+			cardClicked(this);
 		});
 
 		gameArea.append(card);
