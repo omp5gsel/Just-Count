@@ -24,84 +24,87 @@
 	<main class="container mt-5">
 
 		<!-- How to Play -->
-		<section id="how-to-play" class="mb-5">
+		<section id="how-to-play" class="text-center mb-5">
 
 			<!-- Required to Make Content Centered on Users View -->
 			<div class="row justify-content-center">
 
 				<!-- Steps - Updated with JQuery -->
-				<div id="tutorialCard" class="tutorial ol-12 col-md-10 col-lg-8 mb-4">
+				<div class="col-12 col-md-10 col-lg-8">
 
-					<h2 class="text-center mb-4">How to Play</h2>
-					<!-- 1 = Flip a card -->
-					<!-- 2 = Flip another card -->
-					<!-- 3 = Match pairs in order -->
-					<h5 id="tutorialTitle" class="text-center">1. Flip a card</h5>
-					<div id="tutorialArea" class="d-flex justify-content-around">
-						<!-- 2 -->
-						<div id="tutorialCard1" class="flip-card" data-value="2">
-							<div class="flip-card-inner">
-								<div class="flip-card-front">
-									<i class="fas fa-question"></i>
-								</div>
-								<div class="flip-card-back">
-									<h1>2</h1>
-								</div>
-							</div>
-						</div>
-						<!-- 2 -->
-						<div id="tutorialCard2" class="flip-card" data-value="2">
-							<div class="flip-card-inner">
-								<div class="flip-card-front">
-									<i class="fas fa-question"></i>
-								</div>
-								<div class="flip-card-back">
-									<h1>2</h1>
+					<div class="tutorial text-center mb-4">
+
+
+						<h2 class="mb-4">How to Play</h2>
+						<!-- 1 = Flip a card -->
+						<!-- 2 = Flip another card -->
+						<!-- 3 = Match pairs in order -->
+						<h5 id="tutorialTitle" class="mb-4">1. Flip a card</h5>
+						<div id="tutorialArea" class="d-flex justify-content-around">
+							<!-- 2 -->
+							<div id="tutorialCard1" class="flip-card" data-value="2">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<i class="fas fa-question"></i>
+									</div>
+									<div class="flip-card-back">
+										<h1>2</h1>
+									</div>
 								</div>
 							</div>
-						</div>
-						<!-- 1 -->
-						<div id="tutorialCard3" class="flip-card click-me" data-value="1"
-							onclick="tutorialCardClicked(this)">
-							<div class="flip-card-inner">
-								<div class="flip-card-front">
-									<i class="fas fa-question"></i>
-								</div>
-								<div class="flip-card-back">
-									<h1>1</h1>
+							<!-- 2 -->
+							<div id="tutorialCard2" class="flip-card" data-value="2">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<i class="fas fa-question"></i>
+									</div>
+									<div class="flip-card-back">
+										<h1>2</h1>
+									</div>
 								</div>
 							</div>
-						</div>
-						<!-- 1 -->
-						<div id="tutorialCard4" class="flip-card" data-value="1">
-							<div class="flip-card-inner">
-								<div class="flip-card-front">
-									<i class="fas fa-question"></i>
+							<!-- 1 -->
+							<div id="tutorialCard3" class="flip-card click-me" data-value="1"
+								onclick="tutorialCardClicked(this)">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<i class="fas fa-question"></i>
+									</div>
+									<div class="flip-card-back">
+										<h1>1</h1>
+									</div>
 								</div>
-								<div class="flip-card-back">
-									<h1>1</h1>
+							</div>
+							<!-- 1 -->
+							<div id="tutorialCard4" class="flip-card" data-value="1">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<i class="fas fa-question"></i>
+									</div>
+									<div class="flip-card-back">
+										<h1>1</h1>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 
-			<div class="text-center">
-				<button id="tutorialPlayButton" type="button" class="btn btn-secondary">I Just Want to Play!</button>
-			</div>
+				<div class="text-center mt-4">
+					<button id="tutorialPlayButton" type="button" class="btn btn-secondary">I Just Want to
+						Play!</button>
+				</div>
 		</section>
 
 		<!-- Game Area -->
 		<section id="game" class="text-center mb-5" style="display: none;">
 			<!-- Added Bootstrap Grid to match the tutorial and fix scaling issues -->
 			<div class="row justify-content-center">
-				<div class="col-12 col-md-10 col-lg-8">
+				<div id="gameCard" class="col-12 col-md-10 col-lg-8">
+				</div>
+				<div id="gameCard" class="col-12 col-md-10 col-lg-8">
+					<p>Score: <span id="score">0</span> | Time remaining: <span id="time">01:00</span></p>
 					<div class="tutorial text-center">
-						<!-- Removed the heading, it doesn't add anything -->
-						<!-- <h2>Game</h2> -->
-						<p>Score: <span id="score">0</span> | Time remaining: <span id="time">01:00</span></p>
-
 						<div id="game-cards">
 							<div id="gameCard1" class="flip-card" data-value="0" onclick="cardClicked(this)">
 								<div class="flip-card-inner">
