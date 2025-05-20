@@ -1,3 +1,7 @@
+**GitPages Link:** https://omp5gsel.github.io/Just-Count/
+
+**Kanban Board:** https://github.com/users/omp5gsel/projects/2
+
 # Just-Count
 A simple, online game, where all that you need to do is **match cards and count!**
 
@@ -5,10 +9,10 @@ A simple, online game, where all that you need to do is **match cards and count!
 
 This site is intended to give entertainment to players by using memory and timers to create quick competative gameplay. The site aims to provide the following mechincs & features:
 
--   Card matching
--   Numberical card order logic
--   Session timer and score
--   User friendly interactive tutorial
+-   Guided “How to Play” tutorial
+-   Dynamic and random card board each round
+-   30 second round timer with +3's bonus per correct match
+-   10 pts for the first match with a multiplier up to 3x for consecutive correct answers.
 
 ## Development Process
 
@@ -23,6 +27,12 @@ I will test the site manually on multiple browsers and devices. I will use W3C v
 
 ### 4. Deployment
 The site is deployed to Github & Github Pages.
+
+---
+
+## Project Management
+
+Tracked tasks and progress on the [GitHub Project Kanban Board](https://github.com/users/omp5gsel/projects/2).
 
 ---
 
@@ -49,6 +59,15 @@ The site is deployed to Github & Github Pages.
 -   Play the game.
 -   View score when timer is up.
 
+---
+
+## User Stories
+
+- **As a** new player, **I want** a clear tutorial, **So that** I understand the rules before playing.
+
+- **As a** competitive gamer, **I want** streak bonuses and a visible score, **So that** I can challenge myself and track improvement.
+
+---
 
 ## Wireframes
 
@@ -58,14 +77,14 @@ The website layout was planned using wireframes to ensure a user-friendly and re
 
 ---
 
-## Deployment Process
+## Deployment
 
-### 1. Download the Code ***** REPLACE WITH UPDATED IMAGE *****
+### 1. Download the Code
 Head to the github page for this project, [here](https://github.com/omp5gsel/Just-Count), and select "Download ZIP" under the "<> Code" button.
 
 ![Download Github Code](assets/images/readme/deployment/screenshot-download-github-code.png)
 
-### 2. Extract the Code to a Local Folder ***** REPLACE WITH UPDATED IMAGE *****
+### 2. Extract the Code to a Local Folder
 Locate your downloaded code, usually in C:\Users\\%username%\Downloads. Select your file, and then extract the code into a new folder using the "Extract All" button on the toolbar.
 
 ![Extract Code](assets/images/readme/deployment/screenshot-extract-code.png)
@@ -75,7 +94,7 @@ You can download VSCode by clicking [here](https://code.visualstudio.com/downloa
 
 ![Open code in VSCode](assets/images/readme/deployment/screenshot-open-code.png)
 
-### 4. Open any page ***** REPLACE WITH UPDATED IMAGE *****
+### 4. Open any page
 Within the explorer pane on the left side of VScode, click onto the `index.html` file to open this in the editor.
 
 ![Open HTML file](assets/images/readme/deployment/screenshot-open-html-file.png)
@@ -92,7 +111,16 @@ Within the HTML page, press Go Live along the bottom bar
 
 ---
 
-## Technologies Used (Planned)
+## Navigation
+
+- **How to Play** (`#how-to-play`)  
+  Interactive step-by-step tutorial.  
+- **Game** (`#game`)  
+  Main board, score display, and timer.
+
+---
+
+## Technologies Used
 
 | Technology       | Purpose                                                    |
 | ---------------- | ---------------------------------------------------------- |
@@ -103,10 +131,20 @@ Within the HTML page, press Go Live along the bottom bar
 | **Git & Github** | Version control and repository.                            |
 | **Github Pages** | Deployment of the site.                                    |
 | **Github Projects** | Usage and deployment of Kanban Board for this project   |
+| **JavaScript**   | Interactive page interactions, mainly jQuery               |
 
-## Credits - to be cleaned up later
+---
+
+## Credits
 W3Schools : Flip card - https://www.w3schools.com/howto/howto_css_flip_card.asp
 
-## Bugs / Testing
-20/05/2025 - Found an issue whereby you can press more than 2 guesses if you click quick enough. This causes the game to freeze since it only checks matches and removes the classes if two guesses are made, so clicking many in a quick period causes no actions to occur and the game to be unplayable. Resolved by adding the same checks when cards are clicked as when checking for matches, so any clicks after the first 2 flipped cards will not register until the previous check has removed any remnant classes.
+---
 
+## Bugs / Testing
+- **Card overflow on narrow devices**  
+  - *Cause:* Fixed 80 px card width limits columns to 2.  
+  - *Fix:* Added responsive sizing and adjusted grid gap.
+
+- **Rapid-click glitch**  
+  - *Cause:* More than two cards could flip before resolution.  
+  - *Fix:* Disabled extra clicks until current pair resolves.
