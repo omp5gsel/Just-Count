@@ -27,14 +27,14 @@ function tutorial() {
 				"wrong flipped guess"
 			);
 			// Update title
-			$("h5#tutorialTitle").text("3. Match pairs in order");
+			$("h5#tutorialTitle").text("3. Match pairs in numerical order");
 
 			// Add the ability to click the next card
 			$("#tutorialCard3, #tutorialCard4")
 				.addClass("click-me")
 				.attr("onclick", "tutorialCardClicked(this)");
 		}, 1000);
-	} else if (currentTutorial.text() === "3. Match pairs in order") {
+	} else if (currentTutorial.text() === "3. Match pairs in numerical order") {
 		if ($(".flipped").length === 2) {
 			console.log("Two cards flipped, correct guess");
 			// Wait so player can see flipped card

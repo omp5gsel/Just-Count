@@ -1,5 +1,6 @@
 // Global variables
 let currentRound = 1;
+let expectedPair = 1;
 
 // Set 'play' button action
 $("#tutorialPlayButton").click(function () {
@@ -15,6 +16,14 @@ $("#tutorialPlayButton").click(function () {
 
 function newGame() {
 	console.log("New game started");
+	// Reset the game state
+	newRound();
+	// Reset the expected pair
+	expectedPair = 1;
+}
+
+function newRound() {
+	console.log("New round started");
 	// Reset the game state
 	$(".card").removeClass("flipped guess wrong correct");
 	$(".card").removeAttr("onclick");
@@ -108,5 +117,46 @@ function cardClicked(card) {
 }
 
 function checkForMatch() {
-	console.log("Checking for match");
+	// Get all flipped cards that are in play
+	var flippedCards = $(".flip-card.flipped").not(".correct").not(".wrong");
+	// Check that we have two flipped cards to compare
+	if (flippedCards.length !== 2) {
+		return; // wait until two cards are flipped
+	}
+
+	// Determine the two flipped cards
+	var firstCard = flippedCards.eq(0);
+	var secondCard = flippedCards.eq(1);
+
+	// Get the value of each card
+	var firstValue = firstCard.data("value");
+	var secondValue = secondCard.data("value");
+
+	// How many pairs this round
+	var totalPairs = getPairsForLevel(currentRound);
+
+	// If they match *and* are the next expected pair
+	if (firstValue === secondValue && firstValue === expectedPair) {
+		setTimeout(function () {
+			// Update classes for correct match
+			firstCard.addClass("correct").removeClass("guess");
+			secondCard.addClass("correct").removeClass("guess");
+			// Update expected pair to be +1
+			expectedPair++;
+			// If we’ve matched all pairs, you could trigger level-up here
+			if (expectedPair > totalPairs) {
+				currentRound++;
+				newRound();
+			}
+		}, 500);
+	} else {
+		// Wrong guess: show red shake …
+		setTimeout(function () {
+			firstCard.add(secondCard).addClass("wrong");
+		}, 500);
+		// … then flip back to “?” after the shake
+		setTimeout(function () {
+			firstCard.add(secondCard).removeClass("flipped guess wrong");
+		}, 1000);
+	}
 }
