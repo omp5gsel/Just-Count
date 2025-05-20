@@ -86,7 +86,7 @@
 			</div>
 
 			<div class="text-center">
-				<button class="btn btn-secondary">I Just Want to Play!</button>
+				<button id="tutorialPlayButton" type="button" class="btn btn-secondary">I Just Want to Play!</button>
 			</div>
 		</section>
 
@@ -97,7 +97,7 @@
 			<p>Score: <span id="score">0</span> | Time remaining: <span id="time">01:00</span></p>
 
 			<div id="game-cards" class="d-flex flex-wrap justify-content-center">
-				<div id="gameCard1" class="flip-card" data-value="0" onclick="tutorialCardClicked(this)">
+				<div id="gameCard1" class="flip-card" data-value="0" onclick="gameCardClicked(this)">
 					<div class="flip-card-inner">
 						<div class="flip-card-front">
 							<i class="fas fa-question"></i>

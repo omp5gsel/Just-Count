@@ -1,4 +1,5 @@
-// The tutorial follows a set path, no randomness, no checks. Everything is pre-defined.
+// The tutorial follows a set path, no randomness, no checks required.
+// - Everything is pre-defined.
 
 function tutorial() {
 	// Set path to DOM item to identify current tutorial section
@@ -41,7 +42,7 @@ function tutorial() {
 				$("#tutorialCard3, #tutorialCard4").addClass("correct");
 			}, 500);
 			// Update title
-			$("h5#tutorialTitle").text("Easy right? Press Lets Go! to start!'");
+			$("h5#tutorialTitle").text('Easy right? Press "Lets Go!" to start!');
             // Change button to play
 			$(".btn.btn-secondary")
 				.removeClass("btn-secondary")
