@@ -1,6 +1,8 @@
 // Global variables
 let currentRound = 1;
 let expectedPair = 1;
+let score = 0;
+let currentStreak = 0;
 
 // Set 'play' button action
 $("#tutorialPlayButton").click(function () {
@@ -142,6 +144,8 @@ function checkForMatch() {
 			// Update classes for correct match
 			firstCard.addClass("correct").removeClass("guess");
 			secondCard.addClass("correct").removeClass("guess");
+			// Calcuaate points and update score
+			calculatePoints();
 			// Update expected pair to be +1
 			expectedPair++;
 			// If all pairs are matched, start a new round
@@ -159,5 +163,27 @@ function checkForMatch() {
 		setTimeout(function () {
 			firstCard.add(secondCard).removeClass("flipped guess wrong");
 		}, 800);
+		// Reset answer streak
+		currentStreak = 0;
 	}
+}
+
+function calculatePoints() {
+	// Update the current streak
+	currentStreak++;
+
+	// Set streak multiplier limit at 3x base value
+	const multiplier = Math.min(currentStreak, 3);
+
+	// Set base point value
+	const basePoints = 10;
+
+	// Calculate and add points
+	const pointsGained = basePoints * multiplier;
+
+	// Add new points to the score
+	score += pointsGained;
+
+	// Update the onscreen score
+	$("#score").text(score);
 }
