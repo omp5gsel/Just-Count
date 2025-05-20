@@ -1,4 +1,5 @@
-html {
+html,
+body {
 	margin: 0;
 	padding: 0;
 }
@@ -48,27 +49,53 @@ header i {
 
 /* Cards */
 .card-game,
-.card-tutorial {
+.card-tutorial,
+.flip-card {
 	width: 80px;
 	height: 80px;
-	background-color: #fff;
+	perspective: 800px;
+	margin: 5px;
+	cursor: pointer;
+}
+
+.flip-card-inner {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transition: transform 0.6s ease-in-out;
+	transform-style: preserve-3d;
+}
+
+.flip-card-front,
+.flip-card-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
 	border: 2px solid #ccc;
 	border-radius: 8px;
+	background-color: #fff;
+	backface-visibility: hidden;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	font-size: 2rem;
-	cursor: pointer;
 	user-select: none;
-	transition: transform 0.2s ease, box-shadow 0.2s ease;
-	margin: 5px;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.card-game:hover,
-.card-tutorial:hover {
+.flip-card-back {
+	transform: rotateY(180deg);
+	background-color: #f8f8f8;
+}
+
+.flip-card.flipped .flip-card-inner {
+	transform: rotateY(180deg);
+}
+
+.flip-card-front:hover,
+.flip-card-back:hover {
 	border-color: #7700ff;
-	box-shadow: 0px 0px 8px rgba(140, 0, 255, 0.733);
+	box-shadow: 0 0 8px rgba(140, 0, 255, 0.73);
 }
 
 /* Play Button */
@@ -97,26 +124,79 @@ footer i:hover {
 @keyframes green-glow {
 	0%,
 	100% {
-		box-shadow: 0 0 3px rgba(174, 0, 255, 0.6), 0 0 6px rgba(183, 0, 255, 0.4);
+		box-shadow: 0 0 3px rgba(174, 0, 255, 0.6),
+			0 0 6px rgba(183, 0, 255, 0.4);
 	}
 	50% {
 		box-shadow: 0 0 6px rgb(162, 0, 255), 0 0 12px rgba(174, 0, 255, 0.7);
 	}
 }
 
-.click-me {
+.click-me .flip-card-inner {
 	animation: green-glow 2s ease-in-out infinite;
 	border-color: #7700ff;
+	border-radius: 8px;
 }
 
 /* Correct Guess */
-.correct {
-	background-color: #28a74625;
+.correct .flip-card-front,
+.correct .flip-card-back {
+	background-color: rgba(40, 167, 69, 0.15);
 	border-color: #28a745;
 }
 
+.flip-card.correct .flip-card-inner {
+  transform: rotateY(180deg) !important;
+}
+
+.flip-card.correct .flip-card-front,
+.flip-card.correct .flip-card-back {
+  background-color: rgba(40, 167, 69, 0.15) !important;
+  border-color: #28a745 !important;
+}
+
+
 /* On Going Guess */
-.guess {
-	background-color: #007bff2a;
+.guess .flip-card-front,
+.guess .flip-card-back {
+	background-color: rgba(0, 123, 255, 0.15);
 	border-color: #007bff;
+}
+
+/* Wrong Guess */
+.flip-card.flipped.wrong .flip-card-inner {
+	transform: rotateY(180deg);
+}
+
+.flip-card.wrong .flip-card-back {
+	background-color: rgba(220, 53, 69, 0.15);
+	border-color: red;
+}
+
+@keyframes shake {
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+	20%,
+	60% {
+		transform: translateX(-5px);
+	}
+	40%,
+	80% {
+		transform: translateX(5px);
+	}
+}
+
+.flip-card.wrong {
+  animation: shake 0.5s ease-in-out;
+}
+
+.flip-card.wrong .flip-card-inner {
+  transform: rotateY(180deg) !important;
+}
+
+.flip-card.wrong .flip-card-back {
+  background-color: rgba(220, 53, 69, 0.15);
+  border-color: red;  
 }

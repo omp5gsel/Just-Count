@@ -38,13 +38,49 @@
 					<h5 id="tutorialTitle" class="text-center">1. Flip a card</h5>
 					<div id="tutorialArea" class="d-flex justify-content-around">
 						<!-- 2 -->
-						<div id="tutorialCard1" class="card-tutorial"><i class="fas fa-question"></i></div>
+						<div id="tutorialCard1" class="flip-card" data-value="2">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<i class="fas fa-question"></i>
+								</div>
+								<div class="flip-card-back">
+									<h1>2</h1>
+								</div>
+							</div>
+						</div>
 						<!-- 2 -->
-						<div id="tutorialCard2" class="card-tutorial"><i class="fas fa-question"></i></div>
+						<div id="tutorialCard2" class="flip-card" data-value="2">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<i class="fas fa-question"></i>
+								</div>
+								<div class="flip-card-back">
+									<h1>2</h1>
+								</div>
+							</div>
+						</div>
 						<!-- 1 -->
-						<div id="tutorialCard3" class="card-tutorial click-me"><i class="fas fa-question"></i></div>
+						<div id="tutorialCard3" class="flip-card click-me" data-value="1" onclick="tutorialCardClicked(this)">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<i class="fas fa-question"></i>
+								</div>
+								<div class="flip-card-back">
+									<h1>1</h1>
+								</div>
+							</div>
+						</div>
 						<!-- 1 -->
-						<div id="tutorialCard4" class="card-tutorial"><i class="fas fa-question"></i></div>
+						<div id="tutorialCard4" class="flip-card" data-value="1">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<i class="fas fa-question"></i>
+								</div>
+								<div class="flip-card-back">
+									<h1>1</h1>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -56,17 +92,21 @@
 
 
 		<!-- Game Area -->
-		<section id="game" class="text-center mb-5">
+		<section id="game" class="text-center mb-5" style="display: none;">
 			<h2>Game</h2>
 			<p>Score: <span id="score">0</span> | Time remaining: <span id="time">01:00</span></p>
 
 			<div id="game-cards" class="d-flex flex-wrap justify-content-center">
-				<div class="card-game"><i class="fas fa-question"></i></div>
-				<div class="card-game"><i class="fas fa-question"></i></div>
-				<div class="card-game"><i class="fas fa-question"></i></div>
-				<div class="card-game"><i class="fas fa-question"></i></div>
-				<div class="card-game"><i class="fas fa-question"></i></div>
-				<div class="card-game"><i class="fas fa-question"></i></div>
+				<div id="gameCard1" class="flip-card" data-value="0" onclick="tutorialCardClicked(this)">
+					<div class="flip-card-inner">
+						<div class="flip-card-front">
+							<i class="fas fa-question"></i>
+						</div>
+						<div class="flip-card-back">
+							<h1>0</h1>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 
@@ -86,6 +126,7 @@
 	<script src="assets/js/jquery-3.7.1.min.js"></script>
 	<script src="assets/js/bootstrap.bundle.min.js"></script>
 	<script src="assets/js/game.js"></script>
+	<script src="assets/js/tutorial.js"></script>
 </body>
 
 </html>

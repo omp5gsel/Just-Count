@@ -103,3 +103,6 @@ Within the HTML page, press Go Live along the bottom bar
 | **Git & Github** | Version control and repository.                            |
 | **Github Pages** | Deployment of the site.                                    |
 | **Github Projects** | Usage and deployment of Kanban Board for this project   |
+
+## Credits - to be cleaned up later
+W3Schools : Flip card - https://www.w3schools.com/howto/howto_css_flip_card.asp
