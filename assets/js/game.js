@@ -1,8 +1,11 @@
 // Global variables
-let currentRound = 1;
-let expectedPair = 1;
-let score = 0;
-let currentStreak = 0;
+let currentRound = 1; // Current round of the game
+let expectedPair = 1; // Expected pair to match
+let score = 0; // Player's score
+let currentStreak = 0; // Current streak of correct answers
+let timeRemaining; // Time remaining for the current round
+let timerInterval; // Timer interval for countdown
+let cardsClicked = false; // Flag to track if cards have been clicked
 
 // Set 'play' button action
 $("#tutorialPlayButton").click(function () {
@@ -19,6 +22,17 @@ $("#tutorialPlayButton").click(function () {
 function newGame() {
 	console.log("New game started");
 	// Reset the game state
+	currentRound = 1;
+	expectedPair = 1;
+	score = 0;
+	currentStreak = 0;
+	timeRemaining = 30;
+	cardsClicked = false;
+	// Reset the score display
+	$("#score").text(score);
+	// Reset the timer display
+	$("#time").text('00:30');
+	// Start the game
 	newRound();
 }
 
@@ -98,6 +112,12 @@ function getPairsForLevel(level) {
 
 // Function to handle card clicks
 function cardClicked(card) {
+	// Start timer on first click
+	if (!cardsClicked) {
+		cardsClicked = true;
+		startTimer();
+	}
+
 	console.log("Card clicked:", card);
 	// Check how many cards are already flipped
 	var flippedCount = $(".flip-card.flipped")
@@ -171,19 +191,89 @@ function checkForMatch() {
 function calculatePoints() {
 	// Update the current streak
 	currentStreak++;
-
 	// Set streak multiplier limit at 3x base value
 	const multiplier = Math.min(currentStreak, 3);
-
 	// Set base point value
 	const basePoints = 10;
-
 	// Calculate and add points
 	const pointsGained = basePoints * multiplier;
-
 	// Add new points to the score
 	score += pointsGained;
-
 	// Update the onscreen score
 	$("#score").text(score);
+	// Add 3 seconds per correct match
+	addTime(3);
+}
+
+// Function to format time in MM:SS format
+function formatTime(seconds) {
+	// Split time into minutes/seconds
+	var minutes = Math.floor(seconds / 60);
+	var secs = seconds % 60;
+
+	// Make sure digits have leading zero's for readibility as text
+	if (minutes < 10) {
+		minutes = "0" + minutes;
+	}
+
+	// Make sure digits have leading zero's for readibility as text
+	if (secs < 10) {
+		secs = "0" + secs;
+	}
+
+	// Join values with a colon to resemble a digital clock
+	return minutes + ":" + secs;
+}
+
+// Function to start the timer for the game
+function startTimer() {
+	clearInterval(timerInterval);
+	timeRemaining = 30;
+	$("#time").text(formatTime(timeRemaining));
+
+	timerInterval = setInterval(function () {
+		timeRemaining--;
+		$("#time").text(formatTime(timeRemaining));
+
+		if (timeRemaining <= 0) {
+			clearInterval(timerInterval);
+			gameOver();
+		}
+	}, 1000);
+}
+
+// Function to add time to the timer
+function addTime(seconds) {
+	timeRemaining += seconds;
+	$("#time").text(formatTime(timeRemaining));
+}
+
+// Function to handle the end of the game
+function gameOver() {
+	console.warn("Game over!");
+	// Update final score
+	$("#finalScore").text(score);
+	// Show game over message
+	$("#game-over").fadeIn("slow", function () {
+		// Hide the game area
+		$("#game").fadeOut("slow");
+	});
+	// Reset the game state
+	currentRound = 1;
+	expectedPair = 1;
+	score = 0;
+	currentStreak = 0;
+	timeRemaining = 30;
+	clearInterval(timerInterval);
+}
+
+function restartGame() {
+	console.log("Restarting game");
+	// Hide the game over message
+	$("#game-over").fadeOut("slow", function () {
+		// Show the game area
+		$("#game").fadeIn("slow");
+	});
+	// Start a new game
+	newGame();
 }

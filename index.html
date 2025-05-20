@@ -104,7 +104,7 @@
 				<div id="gameCard" class="col-12 col-md-10 col-lg-8">
 				</div>
 				<div id="gameCard" class="col-12 col-md-10 col-lg-8">
-					<p>Score: <span id="score">0</span> | Time remaining: <span id="time">01:00</span></p>
+					<p>Score: <span id="score">0</span> | Time remaining: <span id="time">00:30</span></p>
 					<div class="tutorial text-center">
 						<div id="game-cards">
 							<div id="gameCard1" class="flip-card" data-value="0" onclick="cardClicked(this)">
@@ -123,7 +123,16 @@
 			</div>
 		</section>
 
-
+		<!-- Game Over -->
+		<section id="game-over" class="text-center mb-5" style="display: none;">
+			<div class="row justify-content-center">
+				<div class="col-12 col-md-10 col-lg-8">
+					<h2 class="mb-4">Game Over</h2>
+					<p>Your score: <span id="finalScore">0</span></p>
+					<button id="restartButton" type="button" class="btn btn-secondary" onclick="restartGame()">Play Again</button>
+				</div>
+			</div>
+		</section>
 	</main>
 
 	<!-- Footer -->
