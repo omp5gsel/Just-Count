@@ -19,7 +19,7 @@ function newGame() {
 	$(".card").removeClass("flipped guess wrong correct");
 	$(".card").removeAttr("onclick");
 	// Shuffle and display cards
-	shuffleCards();
+	shuffleCards(currentRound);
 }
 
 // Function to randomly generate and shuffle cards
