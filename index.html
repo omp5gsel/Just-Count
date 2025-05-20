@@ -30,39 +30,23 @@
 			<!-- Required to Make Content Centered on Users View -->
 			<div class="row justify-content-center">
 
-				<!-- STEP 1 -->
-				<div id="step-1" class="tutorial col-md-4 mb-4">
-					<h5 class="text-center">1. Flip a card</h5>
-					<div class="d-flex justify-content-around">
-						<div class="card-tutorial"><i class="fas fa-question"></i></div>
-						<div class="card-tutorial"><i class="fas fa-question"></i></div>
-						<div class="card-tutorial click-me"><i class="fas fa-question"></i></div>
-						<div class="card-tutorial"><i class="fas fa-question"></i></div>
+				<!-- Steps - Updated with JQuery -->
+				<div id="tutorialCard" class="tutorial col-md-4 mb-4">
+					<!-- 1 = Flip a card -->
+					<!-- 2 = Flip another card -->
+					<!-- 3 = Match pairs in order -->
+					<h5 id="tutorialTitle" class="text-center">1. Flip a card</h5>
+					<div id="tutorialArea" class="d-flex justify-content-around">
+						<!-- 2 -->
+						<div id="tutorialCard1" class="card-tutorial"><i class="fas fa-question"></i></div>
+						<!-- 2 -->
+						<div id="tutorialCard2" class="card-tutorial"><i class="fas fa-question"></i></div>
+						<!-- 1 -->
+						<div id="tutorialCard3" class="card-tutorial click-me"><i class="fas fa-question"></i></div>
+						<!-- 1 -->
+						<div id="tutorialCard4" class="card-tutorial"><i class="fas fa-question"></i></div>
 					</div>
 				</div>
-
-				<!-- STEP 2 (start hidden, add d-none after testing) -->
-				<div id="step-2" class="tutorial col-md-4 mb-4">
-					<h5 class="text-center">2. Flip another card</h5>
-					<div class="d-flex justify-content-around">
-						<div class="card-tutorial click-me"><i class="fas fa-question"></i></div>
-						<div class="card-tutorial"><i class="fas fa-question"></i></div>
-						<div class="card-tutorial guess">1</div>
-						<div class="card-tutorial"><i class="fas fa-question"></i></div>
-					</div>
-				</div>
-
-				<!-- STEP 3 (start hidden, add d-none after testing) -->
-				<div id="step-3" class="tutorial col-md-4 mb-4">
-					<h5 class="text-center">3. Match pairs in order</h5>
-					<div class="d-flex justify-content-around">
-						<div class="card-tutorial"><i class="fas fa-question"></i></div>
-						<div class="card-tutorial"><i class="fas fa-question"></i></div>
-						<div class="card-tutorial"><i class="fas fa-question"></i></div>
-						<div class="card-tutorial"><i class="fas fa-question"></i></div>
-					</div>
-				</div>
-
 			</div>
 
 			<div class="text-center">
