@@ -27,8 +27,7 @@ header i {
 }
 
 /* Section Titles */
-#how-to-play h2,
-#game h2 {
+#how-to-play h2 {
 	font-size: 2rem;
 	margin-bottom: 1rem;
 }
@@ -38,7 +37,7 @@ header i {
 	margin-bottom: 0.75rem;
 }
 
-/* Tutorial Boxes */
+/* Tutorial Box */
 .tutorial {
 	background-color: #f1f1f1;
 	border: 2px solid #ccc;
@@ -47,9 +46,18 @@ header i {
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+#tutorialArea {
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+#tutorialArea .flip-card {
+	margin: 0 !important;
+}
+
 /* Cards */
-.card-game,
-.card-tutorial,
 .flip-card {
 	width: 80px;
 	height: 80px;
@@ -115,6 +123,10 @@ header i {
 	display: grid;
 	gap: 1rem;
 	justify-content: center;
+	justify-items: center;
+	grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+	max-width: 75%;
+	margin: 0 auto;
 }
 
 /* Footer Icon */

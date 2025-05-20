@@ -18,8 +18,6 @@ function newGame() {
 	console.log("New game started");
 	// Reset the game state
 	newRound();
-	// Reset the expected pair
-	expectedPair = 1;
 }
 
 function newRound() {
@@ -29,6 +27,8 @@ function newRound() {
 	$(".card").removeAttr("onclick");
 	// Shuffle and display cards
 	shuffleCards(currentRound);
+	// Reset the expected pair
+	expectedPair = 1;
 }
 
 // Function to randomly generate and shuffle cards
@@ -54,13 +54,6 @@ function shuffleCards(level) {
 	const rows = level < 5 ? 2 : level < 10 ? 3 : 4;
 	// Calculate how many columns we need
 	const cols = Math.ceil(values.length / rows);
-	// Apply the dynamic CSS grid columns
-	gameArea.css({
-		// Fixed-width columns
-		"grid-template-columns": `repeat(${cols}, 80px)`,
-		// Center the whole grid in its container
-		"justify-content": "center",
-	});
 
 	// Create a card for each value
 	values.forEach((val, idReq) => {
@@ -104,6 +97,14 @@ function getPairsForLevel(level) {
 // Function to handle card clicks
 function cardClicked(card) {
 	console.log("Card clicked:", card);
+	// Check how many cards are already flipped
+	var flippedCount = $(".flip-card.flipped")
+		.not(".correct")
+		.not(".wrong").length;
+	if (flippedCount >= 2) {
+		return; // Ignore until previous actions are complete
+	}
+
 	// Check if the card is already flipped
 	if ($(card).hasClass("flipped")) {
 		return; // Ignore if already flipped
@@ -143,20 +144,20 @@ function checkForMatch() {
 			secondCard.addClass("correct").removeClass("guess");
 			// Update expected pair to be +1
 			expectedPair++;
-			// If we’ve matched all pairs, you could trigger level-up here
+			// If all pairs are matched, start a new round
 			if (expectedPair > totalPairs) {
 				currentRound++;
 				newRound();
 			}
-		}, 500);
+		}, 400);
 	} else {
-		// Wrong guess: show red shake …
+		// Wrong guess
 		setTimeout(function () {
 			firstCard.add(secondCard).addClass("wrong");
-		}, 500);
-		// … then flip back to “?” after the shake
+		}, 400);
+		// Flip back the cards after a short delay
 		setTimeout(function () {
 			firstCard.add(secondCard).removeClass("flipped guess wrong");
-		}, 1000);
+		}, 800);
 	}
 }

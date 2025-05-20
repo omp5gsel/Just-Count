@@ -25,13 +25,14 @@
 
 		<!-- How to Play -->
 		<section id="how-to-play" class="mb-5">
-			<h2 class="text-center mb-4">How to Play</h2>
 
 			<!-- Required to Make Content Centered on Users View -->
 			<div class="row justify-content-center">
 
 				<!-- Steps - Updated with JQuery -->
-				<div id="tutorialCard" class="tutorial col-md-4 mb-4">
+				<div id="tutorialCard" class="tutorial ol-12 col-md-10 col-lg-8 mb-4">
+
+					<h2 class="text-center mb-4">How to Play</h2>
 					<!-- 1 = Flip a card -->
 					<!-- 2 = Flip another card -->
 					<!-- 3 = Match pairs in order -->
@@ -93,17 +94,25 @@
 
 		<!-- Game Area -->
 		<section id="game" class="text-center mb-5" style="display: none;">
-			<h2>Game</h2>
-			<p>Score: <span id="score">0</span> | Time remaining: <span id="time">01:00</span></p>
+			<!-- Added Bootstrap Grid to match the tutorial and fix scaling issues -->
+			<div class="row justify-content-center">
+				<div class="col-12 col-md-10 col-lg-8">
+					<div class="tutorial text-center">
+						<!-- Removed the heading, it doesn't add anything -->
+						<!-- <h2>Game</h2> -->
+						<p>Score: <span id="score">0</span> | Time remaining: <span id="time">01:00</span></p>
 
-			<div id="game-cards">
-				<div id="gameCard1" class="flip-card" data-value="0" onclick="cardClicked(this)">
-					<div class="flip-card-inner">
-						<div class="flip-card-front">
-							<i class="fas fa-question"></i>
-						</div>
-						<div class="flip-card-back">
-							<h1>0</h1>
+						<div id="game-cards">
+							<div id="gameCard1" class="flip-card" data-value="0" onclick="cardClicked(this)">
+								<div class="flip-card-inner">
+									<div class="flip-card-front">
+										<i class="fas fa-question"></i>
+									</div>
+									<div class="flip-card-back">
+										<h1>0</h1>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

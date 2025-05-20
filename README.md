@@ -106,3 +106,7 @@ Within the HTML page, press Go Live along the bottom bar
 
 ## Credits - to be cleaned up later
 W3Schools : Flip card - https://www.w3schools.com/howto/howto_css_flip_card.asp
+
+## Bugs / Testing
+20/05/2025 - Found an issue whereby you can press more than 2 guesses if you click quick enough. This causes the game to freeze since it only checks matches and removes the classes if two guesses are made, so clicking many in a quick period causes no actions to occur and the game to be unplayable. Resolved by adding the same checks when cards are clicked as when checking for matches, so any clicks after the first 2 flipped cards will not register until the previous check has removed any remnant classes.
+

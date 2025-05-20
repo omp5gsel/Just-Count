@@ -19,7 +19,7 @@ function tutorial() {
 		// Wait so player can see flipped card
 		setTimeout(function () {
 			$("#tutorialCard1, #tutorialCard3").addClass("wrong");
-		}, 500);
+		}, 400);
 
 		// Reset both cards and move to step 3
 		setTimeout(function () {
@@ -33,14 +33,14 @@ function tutorial() {
 			$("#tutorialCard3, #tutorialCard4")
 				.addClass("click-me")
 				.attr("onclick", "tutorialCardClicked(this)");
-		}, 1000);
+		}, 800);
 	} else if (currentTutorial.text() === "3. Match pairs in numerical order") {
 		if ($(".flipped").length === 2) {
 			console.log("Two cards flipped, correct guess");
 			// Wait so player can see flipped card
 			setTimeout(function () {
 				$("#tutorialCard3, #tutorialCard4").addClass("correct");
-			}, 500);
+			}, 400);
 			// Update title
 			$("h5#tutorialTitle").text(
 				'Easy right? Press "Lets Go!" to start!'
