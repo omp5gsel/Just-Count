@@ -41,7 +41,7 @@ Tracked tasks and progress on the [GitHub Project Kanban Board](https://github.c
 
 ---
 
-## Use Cases
+## User Stories
 
 ### 1. One Off Player
 
@@ -51,9 +51,11 @@ Tracked tasks and progress on the [GitHub Project Kanban Board](https://github.c
 
 **How:**
 
--   Visit the homepage.
+-   Visit the page.
 -   Follow the tutorial on how to play the game.
+![Complete Tutorial](/assets/images/readme/user-stories/complete-tutorial.png)
 -   Play the game until the game is over.
+![One off player score](/assets/images/readme/user-stories/one-off-player-score.png)
 
 ### 2. Repeat Player
 
@@ -67,14 +69,7 @@ Tracked tasks and progress on the [GitHub Project Kanban Board](https://github.c
 -   Skip the tutorial on how to play the game.
 -   Play the game.
 -   View score when timer is up.
-
----
-
-## User Stories
-
--   **As a** new player, **I want** a clear tutorial, **So that** I understand the rules before playing.
-
--   **As a** competitive gamer, **I want** streak bonuses and a visible score, **So that** I can challenge myself and track improvement.
+![Competative Player Score](/assets/images/readme/user-stories/competative-player-score.png)
 
 ---
 
