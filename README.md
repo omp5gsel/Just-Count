@@ -73,7 +73,7 @@ Tracked tasks and progress on the [GitHub Project Kanban Board](https://github.c
 
 The website layout was planned using wireframes to ensure a user-friendly and responsive design. Below are the wireframes for desktop, tablet, and mobile views of the home page (left to right).
 
-![Wireframes - Desktop, Tablet, Mobile](/assets/images/readme/wireframes/Design%20Wireframes.png)
+![Wireframes - Desktop, Tablet, Mobile](/assets/images/readme/wireframes/Design-Wireframes.png)
 
 ---
 
