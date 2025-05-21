@@ -148,3 +148,23 @@ W3Schools : Flip card - https://www.w3schools.com/howto/howto_css_flip_card.asp
 - **Rapid-click glitch**  
   - *Cause:* More than two cards could flip before resolution.  
   - *Fix:* Disabled extra clicks until current pair resolves.
+
+## Device Compatibility
+
+**Manual testing** - After manually testing the game on multiple devices, through the tutorial and the gameplay, all responsive elements seem to be working well and holding the correct form / sizes for the required views.
+
+**Desktop**
+![Desktop Tutorial](assets/images/readme/device-views/desktop-tutorial.png)
+![Desktop Game](assets/images/readme/device-views/desktop-game.png)
+
+**Tablet**
+![Tablet Tutorial](assets/images/readme/device-views/tablet-tutorial.png)
+![Tablet Game](assets/images/readme/device-views/tablet-game.png)
+
+**Mobile**
+![Mobile Tutorial](assets/images/readme/device-views/mobile-tutorial.png)
+![Mobile Game](assets/images/readme/device-views/mobile-game.png)
+
+---
+
+##
