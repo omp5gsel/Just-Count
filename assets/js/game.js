@@ -9,7 +9,7 @@ let cardsClicked = false; // Flag to track if cards have been clicked
 
 // Set 'play' button action
 $("#tutorialPlayButton").click(function () {
-	console.log("Play button clicked");
+	// console.log("Play button clicked");
 	// Hide the tutorial
 	$("#how-to-play").fadeOut("slow", function () {
 		// Show the game
@@ -20,7 +20,7 @@ $("#tutorialPlayButton").click(function () {
 });
 
 function newGame() {
-	console.log("New game started");
+	// console.log("New game started");
 	// Reset the game state
 	currentRound = 1;
 	expectedPair = 1;
@@ -37,7 +37,7 @@ function newGame() {
 }
 
 function newRound() {
-	console.log("New round started");
+	// console.log("New round started");
 	// Reset the game state
 	$(".card").removeClass("flipped guess wrong correct");
 	$(".card").removeAttr("onclick");
@@ -51,7 +51,7 @@ function newRound() {
 function shuffleCards(level) {
 	// Work out how many pairs are required
 	const numberOfPairs = getPairsForLevel(level);
-	console.log(`Shuffling ${numberOfPairs} pairs for level ${level}`);
+	// console.log(`Shuffling ${numberOfPairs} pairs for level ${level}`);
 
 	// Create an array of all pairs by adding each number twice
 	const values = [];
@@ -94,7 +94,7 @@ function shuffleCards(level) {
 
 		// Add the card to the game area
 		gameArea.append(card);
-		console.log(`Card ${cardId} added with value ${val}`);
+		// console.log(`Card ${cardId} added with value ${val}`);
 	});
 }
 
@@ -118,7 +118,7 @@ function cardClicked(card) {
 		startTimer();
 	}
 
-	console.log("Card clicked:", card);
+	// console.log("Card clicked:", card);
 	// Check how many cards are already flipped
 	var flippedCount = $(".flip-card.flipped")
 		.not(".correct")
@@ -250,7 +250,7 @@ function addTime(seconds) {
 
 // Function to handle the end of the game
 function gameOver() {
-	console.warn("Game over!");
+	// console.warn("Game over!");
 	// Update final score
 	$("#finalScore").text(score);
 	// Show game over message
@@ -268,7 +268,7 @@ function gameOver() {
 }
 
 function restartGame() {
-	console.log("Restarting game");
+	// console.log("Restarting game");
 	// Hide the game over message
 	$("#game-over").fadeOut("slow", function () {
 		// Show the game area

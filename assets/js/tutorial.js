@@ -7,7 +7,7 @@ function tutorial() {
 
 	// Find the tutorial section and set expectations
 	if (currentTutorial.text() === "1. Flip a card") {
-		console.log("Flip first card");
+		// console.log("Flip first card");
 		// Update title
 		$("h5#tutorialTitle").text("2. Flip another card");
 		// Add the ability to click the next card
@@ -15,7 +15,7 @@ function tutorial() {
 			.addClass("click-me")
 			.attr("onclick", "tutorialCardClicked(this)");
 	} else if (currentTutorial.text() === "2. Flip another card") {
-		console.log("Flip second card, incorrect guess");
+		// console.log("Flip second card, incorrect guess");
 		// Wait so player can see flipped card
 		setTimeout(function () {
 			$("#tutorialCard1, #tutorialCard3").addClass("wrong");
@@ -36,7 +36,7 @@ function tutorial() {
 		}, 800);
 	} else if (currentTutorial.text() === "3. Match pairs in numerical order") {
 		if ($(".flipped").length === 2) {
-			console.log("Two cards flipped, correct guess");
+			// console.log("Two cards flipped, correct guess");
 			// Wait so player can see flipped card
 			setTimeout(function () {
 				$("#tutorialCard3, #tutorialCard4").addClass("correct");
@@ -51,7 +51,7 @@ function tutorial() {
 				.addClass("btn-success")
 				.text("Let's go!");
 		} else {
-			console.log("Wait for two cards to flip");
+			// console.log("Wait for two cards to flip");
 		}
 	}
 }
