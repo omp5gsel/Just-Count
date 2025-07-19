@@ -121,15 +121,6 @@ Within the HTML page, press Go Live along the bottom bar
 
 ---
 
-## Navigation
-
--   **How to Play** (`#how-to-play`)  
-    Interactive step-by-step tutorial.
--   **Game** (`#game`)  
-    Main board, score display, and timer.
-
----
-
 ## Technologies Used
 
 | Technology          | Purpose                                                |
