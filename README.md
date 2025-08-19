@@ -272,7 +272,7 @@ I have used the below table to log any findings from using validators, the resul
 | Tool                              | Status      | Issues Found                                                | Fix Notes                                              |
 | --------------------------------- | ----------- | ----------------------------------------------------------- | ------------------------------------------------------ |
 | **W3C Markup Validation Service** | Fixed       | Duplicate `ID` attribute used                               | Entire duplicate code found - removed                  |
-|                                   | In Progress | Consider using the `h1` element as a top-level heading only | Change `h1` to lower level element                     |
+|                                   | In Progress | Consider using the `h1` element as a top-level heading only | Changed `h1` to `h2`                     |
 | **CSS Validator**                 |             | No Errors Found                                             |                                                        |
 | **JavaScript Linting (ESLint)**   | Fix         | Unused variable `cols` in `game.js`                         | Removed as this was a remnant from the old grid layout |
 |                                   | n/a         | `restartGame()` is unused                                   | This is used via the HTML elements `click` action      |
