@@ -96,6 +96,11 @@ header i {
 	background-color: #f8f8f8;
 }
 
+.flip-card-back > h2 {
+	margin: auto;
+	font-size: 2.5rem !important;
+}
+
 .flip-card.flipped .flip-card-inner {
 	transform: rotateY(180deg);
 }

@@ -82,7 +82,7 @@ function shuffleCards(level) {
 					<i class="fas fa-question"></i>
 				</div>
 				<div class="flip-card-back">
-					<h1>${val}</h1>
+					<h2>${val}</h2>
 				</div>
 			</div>
 		</div>`);
