@@ -31,7 +31,7 @@ function newGame() {
 	// Reset the score display
 	$("#score").text(score);
 	// Reset the timer display
-	$("#time").text('00:30');
+	$("#time").text("00:30");
 	// Start the game
 	newRound();
 }
@@ -101,12 +101,12 @@ function shuffleCards(level) {
 // Function to determine the number of pairs based on the level
 function getPairsForLevel(level) {
 	const base = 4;
-	if (level < 5) {
+	if (level <= 5) {
 		// Add 1 pair for levels 1-5
 		return base + level;
 	} else {
-		// Level 6+ : cap at 20 pairs
-		return base + 16;
+		// Level 6+ : cap at 10 pairs
+		return base + 6;
 	}
 }
 
