@@ -15,6 +15,10 @@ This site is intended to give entertainment to players by using memory and timer
 -   30 second round timer with +3's bonus per correct match
 -   10 pts for the first match with a multiplier up to 3x for consecutive correct answers.
 
+**Target Audience**
+- Casual players - start in seconds and feel progress fast.
+- Competitive returners - replay to beat score/streak under time pressure.
+
 ## Development Process
 
 ### 1. Planning
@@ -82,6 +86,20 @@ Tracked tasks and progress on the [GitHub Project Kanban Board](https://github.c
 The website layout was planned using wireframes to ensure a user-friendly and responsive design. Below are the wireframes for desktop, tablet, and mobile views of the home page (left to right).
 
 ![Wireframes - Desktop, Tablet, Mobile](/assets/images/readme/wireframes/design-wireframes.png)
+
+### How this wireframe was used during development
+
+The wireframe designs show the overall flow of the game, which was a great guide during the development process, but along the way not everything ended up in the way it was planned. 
+
+- The header section of the page has stayed the same throughout development. The header uses a simple logo, which is a font-awesome icon, and is positioned next to the game title. This is simple and works without issues.
+
+- The tutorial section had to change. During the development and manual testing process, it was clear that having multiple stages to the tutorial on the screen at once created space issues and took away from the natural flow of the game in a few ways, such as making the user scroll on mobile devices to get to the next section or the tutorial sections being in an 'awkward to read' position on a tablet (2x2 grid).
+
+    This was updated to be one section with the steps flowing by hiding the completed steps and showing the next steps, as well as using the `flip-card` animations to have a representation of the game flow and mechanics. This worked much better for the flow of the game, and also made the HTML & `tutorial.js` shorter.
+
+- The gameplay grid was also adjusted along the development process to vary from the wireframe. During manual testing, it was found that one smaller devices the cards were not correctly sizing due to a fixed card height. This was updated to allow the cards to flex and present correctly regardless of device and screen size.
+
+- The footer was simple but effective on the wireframes, and this was kept as designed. 
 
 ---
 
@@ -253,7 +271,9 @@ This resulted in the following jest results for the updated code:
 
 ## Running the Automated Tests
 
-The test that resulted in the above bug is still present in the `cards-per-level.test.js` file with the resolution code commented below. To test this yourself, please install node.js using [this link](https://nodejs.org/en/download) and open your local copy of this code.
+The test that resulted in the above bug is still present in the `cards-per-level.test.js` file with the resolution code commented below. **The live version of the game has the fix implemented and tested**.
+
+To test this yourself, please install node.js using [this link](https://nodejs.org/en/download) and open your local copy of this code from the `deployment` section above.
 
 1. In vscode, with this code open, along the top toolbar select "Terminal" -> "New Terminal"
 2. Enter "npm install"

@@ -111,6 +111,9 @@ function getPairsForLevel(level) {
 }
 
 // Function to handle card clicks
+// Credit to > https://www.w3schools.com/howto/howto_css_flip_card.asp
+// These classes are used to check for matches, flip new cards and reset flipped cards
+
 function cardClicked(card) {
 	// Start timer on first click
 	if (!cardsClicked) {
