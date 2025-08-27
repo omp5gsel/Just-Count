@@ -16,8 +16,9 @@ This site is intended to give entertainment to players by using memory and timer
 -   10 pts for the first match with a multiplier up to 3x for consecutive correct answers.
 
 **Target Audience**
-- Casual players - start in seconds and feel progress fast.
-- Competitive returners - replay to beat score/streak under time pressure.
+
+-   Casual players - start in seconds and feel progress fast.
+-   Competitive returners - replay to beat score/streak under time pressure.
 
 ## Development Process
 
@@ -89,17 +90,17 @@ The website layout was planned using wireframes to ensure a user-friendly and re
 
 ### How this wireframe was used during development
 
-The wireframe designs show the overall flow of the game, which was a great guide during the development process, but along the way not everything ended up in the way it was planned. 
+The wireframe designs show the overall flow of the game, which was a great guide during the development process, but along the way not everything ended up in the way it was planned.
 
-- The header section of the page has stayed the same throughout development. The header uses a simple logo, which is a font-awesome icon, and is positioned next to the game title. This is simple and works without issues.
+-   The header section of the page has stayed the same throughout development. The header uses a simple logo, which is a font-awesome icon, and is positioned next to the game title. This is simple and works without issues.
 
-- The tutorial section had to change. During the development and manual testing process, it was clear that having multiple stages to the tutorial on the screen at once created space issues and took away from the natural flow of the game in a few ways, such as making the user scroll on mobile devices to get to the next section or the tutorial sections being in an 'awkward to read' position on a tablet (2x2 grid).
+-   The tutorial section had to change. During the development and manual testing process, it was clear that having multiple stages to the tutorial on the screen at once created space issues and took away from the natural flow of the game in a few ways, such as making the user scroll on mobile devices to get to the next section or the tutorial sections being in an 'awkward to read' position on a tablet (2x2 grid).
 
     This was updated to be one section with the steps flowing by hiding the completed steps and showing the next steps, as well as using the `flip-card` animations to have a representation of the game flow and mechanics. This worked much better for the flow of the game, and also made the HTML & `tutorial.js` shorter.
 
-- The gameplay grid was also adjusted along the development process to vary from the wireframe. During manual testing, it was found that one smaller devices the cards were not correctly sizing due to a fixed card height. This was updated to allow the cards to flex and present correctly regardless of device and screen size.
+-   The gameplay grid was also adjusted along the development process to vary from the wireframe. During manual testing, it was found that one smaller devices the cards were not correctly sizing due to a fixed card height. This was updated to allow the cards to flex and present correctly regardless of device and screen size.
 
-- The footer was simple but effective on the wireframes, and this was kept as designed. 
+-   The footer was simple but effective on the wireframes, and this was kept as designed.
 
 ---
 
@@ -289,14 +290,14 @@ To check the corrected code, please comment out the top `getPairsForLevel()` and
 
 I have used the below table to log any findings from using validators, the results and resoltuions.
 
-| Tool                              | Status      | Issues Found                                                | Fix Notes                                              |
-| --------------------------------- | ----------- | ----------------------------------------------------------- | ------------------------------------------------------ |
-| **W3C Markup Validation Service** | Fixed       | Duplicate `ID` attribute used                               | Entire duplicate code found - removed                  |
-|                                   | In Progress | Consider using the `h1` element as a top-level heading only | Changed `h1` to `h2`                     |
-| **CSS Validator**                 |             | No Errors Found                                             |                                                        |
-| **JavaScript Linting (ESLint)**   | Fix         | Unused variable `cols` in `game.js`                         | Removed as this was a remnant from the old grid layout |
-|                                   | n/a         | `restartGame()` is unused                                   | This is used via the HTML elements `click` action      |
-|                                   | n/a         | `tutorialCardClicked()` is unused                           | This is used via the HTML elements `click` action      |
+| Tool                              | Status | Issues Found                                                | Fix Notes                                              |
+| --------------------------------- | ------ | ----------------------------------------------------------- | ------------------------------------------------------ |
+| **W3C Markup Validation Service** | Fixed  | Duplicate `ID` attribute used                               | Entire duplicate code found - removed                  |
+|                                   | Fixed  | Consider using the `h1` element as a top-level heading only | Changed `h1` to `h2`                                   |
+| **CSS Validator**                 |        | No Errors Found                                             |                                                        |
+| **JavaScript Linting (ESLint)**   | Fixed  | Unused variable `cols` in `game.js`                         | Removed as this was a remnant from the old grid layout |
+|                                   | n/a    | `restartGame()` is unused                                   | This is used via the HTML elements `click` action      |
+|                                   | n/a    | `tutorialCardClicked()` is unused                           | This is used via the HTML elements `click` action      |
 
 ## Validator Links
 

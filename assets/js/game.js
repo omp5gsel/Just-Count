@@ -66,11 +66,6 @@ function shuffleCards(level) {
 	const gameArea = $("#game-cards");
 	gameArea.empty();
 
-	// Set rows required for the game area, based on level
-	const rows = level < 5 ? 2 : level < 10 ? 3 : 4;
-	// Calculate how many columns we need
-	const cols = Math.ceil(values.length / rows);
-
 	// Create a card for each value
 	values.forEach((val, idReq) => {
 		// ` required for multi-line strings and strings with variables
